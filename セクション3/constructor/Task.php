@@ -1,0 +1,30 @@
+<?php 
+  declare(strict_types=1);
+
+  class Task
+  {
+    // タスク名
+    public $name;
+
+    // 優先度
+    public $priority;
+
+    // 進行度
+    public $progress;
+
+    // コンストラクタ
+    public function __construct(string $name)
+    {
+      $this->name = $name;
+      $this->priority = 1;
+      $this->progress = 0;
+    }
+
+    // タスクが完了したかを取得するメソッド
+    public function isCompleted(): bool
+    {
+      return $this->progress >= 100; // $progressが100以上なら真を返す
+    }
+  }
+
+?>
